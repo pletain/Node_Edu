@@ -24,8 +24,7 @@ app.use('/uploads', express.static('uploads')); //use는 항상 앞에 URL이 �
 //앞에가 URL 뒤에가 폴더명이다.
 
 app.use( (req, res , next)  =>{
-	app.locals.isLogin = false;
-	next();
+	app.locals.isLogi
 });
 
 //정적파일 서빙
@@ -49,6 +48,10 @@ app.use('/admin', admin );
 
 app.use( (req,res,_) =>{
 	res.status(400).render('common/404.html');
+});
+
+app.use( (req,res,_) =>{
+	res.status(500).render('common/500.html');
 });
 	 
 
